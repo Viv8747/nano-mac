@@ -14,7 +14,7 @@ jobs:
       - name: Install Libraries
         run: pip install pyserial numpy opencv-python pyinstaller
       - name: Compile Mac App
-        run: pyinstaller --onefile --noconsole nanovna.py
+        run: pyinstaller --noconfirm --onefile --windowed nanavna.py
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
         with:
