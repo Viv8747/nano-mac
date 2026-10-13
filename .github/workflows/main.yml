@@ -1,20 +1,19 @@
-
 name: Build Mac App
 on: [push]
 jobs:
   build:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-    - name: Install Libraries
-      run: pip install pyserial numpy opencv-python pyinstaller
-    - name: Compile Mac App
-      run: pyinstaller --onefile --noconsole nanovna_projector.py
-    - name: Upload Finished App
-      uses: actions/upload-artifact@v4
-      with:
-        name: NanoVNA-Mac-App
-        path: dist/
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Libraries
+        run: pip install pyserial numpy opencv-python pyinstaller
+      - name: Compile Mac App
+        run: pyinstaller --onefile --noconsole nanovna_projector.py
+      - name: Upload Finished App
+        uses: actions/upload-artifact@v4
+        with:
+          name: NanoVNA-Mac-App
+          path: dist/
