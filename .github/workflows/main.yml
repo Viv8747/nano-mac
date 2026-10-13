@@ -1,3 +1,4 @@
+
 name: Build Mac App
 on: [push]
 jobs:
